@@ -24,22 +24,31 @@ import requests
 import argparse
 
 # Create parser object
+
+# argparse.ArgumentParser() creates a new ArgumentParser object
 parser = argparse.ArgumentParser()
+
 parser.add_argument('city', type=str, help='City name')
 parser.add_argument('units', type=str, help='Units of measurement')
+
+# parser.parse_args() parses the arguments from the command line
 args = parser.parse_args()
 
 # API call to OpenWeatherMap
-url = f'http://api.openweathermap.org/data/2.5/weather?q={args.city},&units={args.units}&appid={api_key}'    
+url = f'http://api.openweathermap.org/data/2.5/weather?q={args.city},&units={args.units}&appid={api_key}'  
+# Get response from API call
+# 200 = success  
 response = requests.get(url)
 
 # Convert JSON data to Python dictionary
 data = response.json()
+
 # I want to print the dictionary to a text file
 # I do not want it to be rewritten when I run the program again
 with open('weather_forecast.txt', 'a') as f:
     f.write(str(data))
     f.write('\n')
+
 # I want to print the city name
 print(f'City: {data["name"]}')
 # I want to print the country code
