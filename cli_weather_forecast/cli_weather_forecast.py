@@ -4,6 +4,15 @@ This is a simple CLI weather forecast application that uses the OpenWeatherMap A
 The user can input the following: city name, country code, and units of measurement.
 The application will return the following: city name, country code, current temperature, minimum temperature, maximum temperature, and weather description.
 
+Example Input: python cli_weather_forecast.py London GB metric
+Example Output: City: London
+                Country code: GB
+                Current temperature: 10.01
+                Minimum temperature: 8.89
+                Maximum temperature: 11.67
+                Weather description: overcast clouds
+                * The dictionary will be printed to a text file called weather_forecast.txt
+
 """
 
 with open('api_key.txt', 'r') as f:
