@@ -1,10 +1,10 @@
 """
 
 This is a simple CLI weather forecast application that uses the OpenWeatherMap API to retrieve weather data for a given city.
-The user can input the following: city name, country code, and units of measurement.
+The user can input the following: city name and units of measurement.
 The application will return the following: city name, country code, current temperature, minimum temperature, maximum temperature, and weather description.
 
-Example Input: python cli_weather_forecast.py London GB metric
+Example Input: python cli_weather_forecast.py London metric
 Example Output: City: London
                 Country code: GB
                 Current temperature: 10.01
@@ -26,12 +26,11 @@ import argparse
 # Create parser object
 parser = argparse.ArgumentParser()
 parser.add_argument('city', type=str, help='City name')
-parser.add_argument('country_code', type=str, help='Country code')
 parser.add_argument('units', type=str, help='Units of measurement')
 args = parser.parse_args()
 
 # API call to OpenWeatherMap
-url = f'http://api.openweathermap.org/data/2.5/weather?q={args.city},{args.country_code}&units={args.units}&appid={api_key}'    
+url = f'http://api.openweathermap.org/data/2.5/weather?q={args.city},&units={args.units}&appid={api_key}'    
 response = requests.get(url)
 
 # Convert JSON data to Python dictionary
