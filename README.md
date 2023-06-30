@@ -3,6 +3,7 @@ This repository contains a collection of Command-Line Interface (CLI) projects w
 
 ## Projects
 Project #1: The Weather Forecast CLI project is designed to fetch weather data from an API and display it in the command line based on a user-provided location. <br>
+
 Project #1 Demo Video:
 
 https://github.com/marjiasdk/CLI-Python-Projects/assets/113689930/7973076f-bed8-4e36-95e5-81b5934c88d1
